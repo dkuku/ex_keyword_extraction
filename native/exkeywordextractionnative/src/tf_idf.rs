@@ -1,21 +1,8 @@
 use keyword_extraction::tf_idf::{TfIdf, TfIdfParams};
+use std::collections::HashMap;
 
 #[rustler::nif]
-pub fn tfidf_unprocessed_documents(
-    documents: Vec<String>,
-    stop_words: Vec<String>,
-    punctation: Vec<String>,
-) -> i64 {
-    let params = TfIdfParams::UnprocessedDocuments(
-        documents.as_slice(),
-        stop_words.as_slice(),
-        Some(punctation.as_slice()),
-    );
-    let tf_idf = TfIdf::new(params);
-    let ranked_keywords: Vec<String> = tf_idf.get_ranked_words(10);
-    let ranked_keywords_scores: Vec<(String, f32)> = tf_idf.get_ranked_word_scores(10);
-
-    println!("{:?}", ranked_keywords);
-    println!("{:?}", ranked_keywords_scores);
-    1
+pub fn tfidf_get_word_scores_map(documents: Vec<String>) -> HashMap<String, f32> {
+    let params = TfIdfParams::ProcessedDocuments(documents.as_slice());
+    TfIdf::new(params).get_word_scores_map().to_owned()
 }
