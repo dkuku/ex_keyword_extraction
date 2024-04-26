@@ -1,0 +1,14 @@
+[package]
+name = "exkeywordextractionnative"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "exkeywordextractionnative"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+keyword_extraction = "1.4.2"
+rustler = "0.32.1"
