@@ -1,5 +1,7 @@
 %{
+  "assert_value": {:hex, :assert_value, "0.10.4", "0f0e528f048734e1b9c7ed947696a18d387cb052b68c20d973ed28ee03623b5a", [:mix], [], "hexpm", "802784272bbff2c257b04b264c02fddc072a625502d615f111dd4769f6b1d2c0"},
   "jason": {:hex, :jason, "1.4.1", "af1504e35f629ddcdd6addb3513c3853991f694921b1b9368b0bd32beb9f1b63", [:mix], [{:decimal, "~> 1.0 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "fbb01ecdfd565b56261302f7e1fcc27c4fb8f32d56eab74db621fc154604a7a1"},
   "rustler": {:hex, :rustler, "0.32.1", "f4cf5a39f9e85d182c0a3f75fa15b5d0add6542ab0bf9ceac6b4023109ebd3fc", [:mix], [{:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: false]}, {:toml, "~> 0.6", [hex: :toml, repo: "hexpm", optional: false]}], "hexpm", "b96be75526784f86f6587f051bc8d6f4eaff23d6e0f88dbcfe4d5871f52946f7"},
+  "stop_words": {:hex, :stop_words, "0.1.0", "d0d0251dc9f2a0a9ec9e192f313b5d824d22aac15d7070144815a12e638d646d", [:mix], [{:jason, "~> 1.4", [hex: :jason, repo: "hexpm", optional: false]}], "hexpm", "b584d0935e11d51e0d429d7ef56ccb8ad27ab109be9f6b4f5b91d48d067ab947"},
   "toml": {:hex, :toml, "0.7.0", "fbcd773caa937d0c7a02c301a1feea25612720ac3fa1ccb8bfd9d30d822911de", [:mix], [], "hexpm", "0690246a2478c1defd100b0c9b89b4ea280a22be9a7b313a8a058a2408a2fa70"},
 }
