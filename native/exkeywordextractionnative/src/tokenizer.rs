@@ -1,5 +1,5 @@
 use keyword_extraction::tokenizer::Tokenizer;
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 pub fn split_into_words(
     text: &str,
     stop_words: Vec<String>,
@@ -7,7 +7,7 @@ pub fn split_into_words(
 ) -> Vec<String> {
     Tokenizer::new(text, stop_words.as_slice(), get_punctation(&punctation)).split_into_words()
 }
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 pub fn split_into_sentences(
     text: &str,
     stop_words: Vec<String>,
@@ -15,7 +15,7 @@ pub fn split_into_sentences(
 ) -> Vec<String> {
     Tokenizer::new(text, stop_words.as_slice(), get_punctation(&punctation)).split_into_sentences()
 }
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 pub fn split_into_paragraphs(
     text: &str,
     stop_words: Vec<String>,
@@ -23,7 +23,7 @@ pub fn split_into_paragraphs(
 ) -> Vec<String> {
     Tokenizer::new(text, stop_words.as_slice(), get_punctation(&punctation)).split_into_paragraphs()
 }
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 pub fn split_into_phrases(
     text: &str,
     stop_words: Vec<String>,
@@ -38,10 +38,3 @@ fn get_punctation(punctation: &Vec<String>) -> Option<&[String]> {
         _ => Some(punctation.as_slice()),
     }
 }
-//pub fn sync_split_into_words(&self) -> Vec<String>
-//pub fn split_into_sentences(&self) -> Vec<String>
-//pub fn sync_split_into_sentences(&self) -> Vec<String>
-//pub fn split_into_phrases(&self, length: Option<usize>) -> Vec<String>
-//pub fn sync_split_into_phrases(&self, length: Option<usize>) -> Vec<String>
-//pub fn split_into_paragraphs(&self) -> Vec<String>
-//pub fn sync_split_into_paragraphs(&self) -> Vec<String>

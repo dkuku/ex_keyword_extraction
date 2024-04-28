@@ -61,7 +61,7 @@ fn get_options<'a>(options: Vec<TextRankParamsPub>) -> TextRankParamsPriv<'a> {
     });
     opts
 }
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 pub fn tr_new(
     text: &str,
     stop_words: Vec<String>,

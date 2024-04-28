@@ -49,7 +49,7 @@ fn get_options<'a>(options: Vec<RakeParamsPub>) -> RakeParamsPriv<'a> {
     });
     opts
 }
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 pub fn r_new(
     text: &str,
     stop_words: Vec<String>,
