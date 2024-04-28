@@ -34,7 +34,7 @@ pub fn split_into_phrases(
 }
 fn get_punctation(punctation: &Vec<String>) -> Option<&[String]> {
     match punctation {
-        v if v.len() == 0 => None,
+        v if v.is_empty() => None,
         _ => Some(punctation.as_slice()),
     }
 }

@@ -1,14 +1,12 @@
 // pub mod error;
 use keyword_extraction::text_rank::TextRank;
 use keyword_extraction::text_rank::TextRankParams;
-use rustler::{Atom, Encoder, Env, NifTaggedEnum, NifTuple, NifUnitEnum, ResourceArc, Term};
+use rustler::{Encoder, Env, NifTaggedEnum, ResourceArc, Term};
 use std::collections::HashMap;
 mod atoms {
     rustler::atoms! {
         ok,
         error,
-        word,
-        subword,
     }
 }
 pub struct ExKeywordExtractionRef(TextRank);
